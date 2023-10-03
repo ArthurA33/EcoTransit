@@ -3,15 +3,19 @@
 // import viteLogo from '/vite.svg'
 import './App.scss'
 import { NavLink, Link } from "react-router-dom";
-
-
+import Nav from './elements/nav'
+import AppRoutes from './routes/route';
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
 
+    <div>
 
-     <p>app</p>
+      <Nav/>
+      <AppRoutes />
+    </div>
+
 
      
     // <>
