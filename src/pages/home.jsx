@@ -1,6 +1,16 @@
+import './../style/home.scss'
+import HomeCard from './../elements/card.jsx'
 const Home = ()=>{
     return(
-        <h1>homePage</h1>
+        <main>
+        <section className='landing'>
+            <h1>homePage</h1>
+        </section>
+        <section className='cardContainer'>
+        <HomeCard/>
+        </section>
+        </main>
+
     )
 }
 

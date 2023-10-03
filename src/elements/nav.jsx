@@ -7,16 +7,16 @@ const Nav =()=>{
     return(
       <header>
             <nav> 
-            <NavLink to="/">ECOTRANSIT</NavLink>
+            <NavLink className={'logo'} to="/">ECOTRANSIT</NavLink>
                   <ul>
                     <li>
-                    <NavLink to="/">Accueil</NavLink>
+                    <NavLink to="/">ACCUEIL</NavLink>
                     </li>
                     <li>
-                    <NavLink to="/contact">contact</NavLink>
+                    <NavLink to="/contact">CONTACT</NavLink>
                     </li>
                     <li>
-                    <NavLink to="/about">à propos</NavLink>
+                    <NavLink to="/about">A PROPOS</NavLink>
                     </li>
                   </ul>
 
