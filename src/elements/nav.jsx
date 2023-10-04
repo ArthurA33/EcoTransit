@@ -20,11 +20,14 @@ const Nav =()=>{
                     </li>
                   </ul>
 
-                  <button className='actionCall'> connexion </button>
-
-
- 
-
+            
+              <div className='new-nav'>
+                <div className='menu'>
+                  <span className='line-1'></span>
+                  <span className='line-2'></span>
+                  <span className='line-3'></span>
+                </div>
+              </div>
             </nav>
       </header>
     )
