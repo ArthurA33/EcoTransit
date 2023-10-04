@@ -10,17 +10,17 @@ const Nav =()=>{
             <NavLink className={'logo'} to="/">ECOTRANSIT</NavLink>
                   <ul>
                     <li>
-                    <NavLink to="/">ACCUEIL</NavLink>
+                    <NavLink className={'link'} to="/">ACCUEIL</NavLink>
                     </li>
                     <li>
-                    <NavLink to="/contact">CONTACT</NavLink>
+                    <NavLink className={'link'} to="/contact">CONTACT</NavLink>
                     </li>
                     <li>
-                    <NavLink to="/about">A PROPOS</NavLink>
+                    <NavLink className={'link'} to="/about">A PROPOS</NavLink>
                     </li>
                   </ul>
 
-                  <button className='actionCall'> connexion </button>
+                  <a href='login' className='actionCall'> <span>connexion</span> </a>
 
 
  

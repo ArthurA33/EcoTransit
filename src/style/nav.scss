@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
 header{
     width: 100%;
     height: 100px;
@@ -23,7 +24,7 @@ header{
 
         }
 
-        a::after{
+        .link::after{
             position: absolute;
             width: 0%;
             height: 5px;
@@ -33,8 +34,11 @@ header{
             // right: 80px;
             transition: ease-in .2s;
         }
-        a:hover::after, a:active::after {
+        .link:hover::after, a:active::after {
             width: 70%;
+        }
+        .link {
+            font-family: 'lalezar';
         }
         ul{
             display: flex;
@@ -43,24 +47,25 @@ header{
             justify-content: space-between;
             li{
                 list-style: none;
-                font-weight: 800;
             }
         }
     }
    
 
     .actionCall{
-         background-color: rgb(173, 61, 173);
+         background-color: #7D35D8;
          color: white;
-         font-weight: 600;
          padding: 8px 15px;
          border: none;
          border-radius: 10px;
          font-size: 1.2rem;
-         cursor: pointer;
+         width: 10%;
+         text-align: center;
+         text-transform: uppercase;
+         font-family: 'lalezar';
     }
     .actionCall:hover{
-        background-color: rgb(132, 47, 132);
+        background-color: #682fae;
         transition: .2s;
     }
 }
