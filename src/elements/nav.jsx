@@ -13,7 +13,7 @@ const Nav =()=>{
                     <NavLink to="/">ACCUEIL</NavLink>
                     </li>
                     <li>
-                    <NavLink to="/contact">CONTACT</NavLink>
+                    <NavLink to="/contact/login">CONTACT</NavLink>
                     </li>
                     <li>
                     <NavLink to="/about">A PROPOS</NavLink>

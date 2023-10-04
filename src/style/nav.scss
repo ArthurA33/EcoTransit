@@ -33,7 +33,7 @@ header{
             // right: 80px;
             transition: ease-in .2s;
         }
-        a:hover::after, a:active::after {
+        a:hover::after, .active::after  {
             width: 70%;
         }
         ul{
