@@ -13,12 +13,13 @@ const Nav =()=>{
                     <NavLink to="/">ACCUEIL</NavLink>
                     </li>
                     <li>
-                    <NavLink to="/contact/login">CONTACT</NavLink>
+                    <NavLink to="/contact">CONTACT</NavLink>
                     </li>
                     <li>
                     <NavLink to="/about">A PROPOS</NavLink>
-                    </li>
+                    </li>    
                   </ul>
+                  <NavLink className={'actionCall'} to="/connexion/login"> connexion </NavLink>
 
             
               <div className='new-nav'>
