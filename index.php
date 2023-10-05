@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_5YQCxiyV4vAg32D_J6epTt7FR4GE5Gs&callback=initMap" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="scripts/loadmap.js"></script>
     <script src="scripts/CreateRoad.js"></script>
@@ -27,7 +29,7 @@
             <option value="BusGNV">Bus GNV</option>
             <option value="Tram">Tramway</option>
             <option value="Metro">Métro</option>
-            <option value="Scoot">Scooter / moto légère</option>
+            <option value="Scoot">Scooter / moto légère</option>y
             <option value="Ter">TER</option>
         </select><br><br>
         

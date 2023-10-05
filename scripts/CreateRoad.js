@@ -76,10 +76,23 @@ function calculateRoute() {
           document.getElementById('duration').innerHTML = 'Durée du trajet : ' + duration;
           document.getElementById('distance').innerHTML = 'Nombre de kilomètres du trajet : ' + distance.toFixed(1);
           document.getElementById('CO2').innerHTML = 'Nombre de CO2 utilisé : ' + CO2_utiliser.toFixed(2) + 'g';
-        })
-        .catch(error => {
-          console.error("Error fetching data:", error);
+
+          console.log('je suis ici');
+          
+          $.ajax({
+            type: "POST",
+            url: "create_trajet.php",
+            data: { distance: distance.toFixed(1), co2: CO2_utiliser.toFixed(2)},
+            success: function (data) {
+              
+              console.log(data);
+              if (data == "success") {
+              }else {
+              }
+            }
         });
+
+      });
     } else {
       window.alert('Erreur de direction : ' + status);
     }
