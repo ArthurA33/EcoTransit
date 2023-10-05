@@ -1,0 +1,23 @@
+.container{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px auto;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+.active{
+    background-color: #913EF9;
+    color: white;
+}
+
+}
+.connexionLink{
+    padding: 20px 40px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
