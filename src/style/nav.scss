@@ -63,4 +63,66 @@ header{
         background-color: rgb(132, 47, 132);
         transition: .2s;
     }
+
+
 }
+
+.link-nav {
+    ul {
+        width: 500px;
+    }
+}
+.button-login {
+    a {
+        width: 100%;
+    }
+}
+.new-nav {
+    display: none;
+    .menu {
+        display: grid;
+            width: 30px;
+        span {
+            margin: 5px 0 5px 0;
+            height: 2px;
+            background-color: black;
+        }
+    }
+}
+// /Responsive/
+@media screen and ((min-width: 320px) and (max-width: 479px)) {
+    .button-login {
+        display: none;
+    }
+    .link-nav {
+        display: none;
+    }
+    .new-nav {
+        display: block;
+    }
+}
+@media screen and ((min-width: 480px) and (max-width: 768px)) {
+    /* Styles pour les écrans de 768px ou moins /
+    .button-login {
+        display: none;
+    }
+    .link-nav {
+        display: none;
+    }
+    .new-nav {
+        display: block;
+    }
+
+  }
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    / Styles pour les écrans entre 769px et 1024px */
+    .button-login {
+        display: none;
+    }
+    .link-nav {
+        display: none;
+    }
+    .new-nav {
+        display: block;
+    }
+  }
