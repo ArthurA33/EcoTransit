@@ -79,16 +79,89 @@ header{
 }
 .new-nav {
     display: none;
+    
     .menu {
         display: grid;
-            width: 30px;
+        width: 30px;
         span {
+            transition: .3s;
             margin: 5px 0 5px 0;
-            height: 2px;
+            height: 3px;
             background-color: black;
+        }
+        .line-1 {
+            width: 100%;
+            margin-left: auto;
+        }
+        .line-2 {
+            width: 70%;
+            margin-left: auto;
+        }
+        .line-3 {
+            width: 50%;
+            margin-left: auto;
+        }
+        &:hover {
+            .line-1, .line-2, .line-3 {
+                width: 100%;
+                transition: .3s;
+            }
         }
     }
 }
+.menu-responsive {
+    position: fixed;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: rgb(142, 210, 142);
+    z-index: 999;
+    .close {
+        &:hover {
+            color: red;
+        }
+        width: 10%;
+        color: white;
+        font-size: xxx-large;
+        cursor: pointer;
+        margin-left: 2%;
+    }
+    nav {
+        text-align: center;
+        display: grid;
+        span {
+            margin: 10px 0 10px 0;
+        }
+        .button-responsive {
+            &:hover {
+                background-color: rgb(132, 47, 132);
+            }
+            background-color: rgb(173, 61, 173);
+            margin: 60px auto;
+            padding: 10px;
+            width: 50%;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+        }
+        a {
+            font-size: x-large;
+            margin: 25px auto;
+            padding: 10px;
+            width: 50%;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+        }
+    }
+    .transition {
+        height: 2px;
+        width: 80%;
+        border-radius: 10px;
+        background-color: black;
+        margin: auto;
+    }
+  }
 // /Responsive/
 @media screen and ((min-width: 320px) and (max-width: 479px)) {
     .actionCall {

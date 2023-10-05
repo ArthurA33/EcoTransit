@@ -4,6 +4,11 @@ import { NavLink, Link } from "react-router-dom";
 
 const Nav =()=>{
 
+  function handleClick(){
+      const menu = document.getElementById('menu-responsive');
+      menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+  }
+
     return(
       <header>
             <nav> 
@@ -22,7 +27,7 @@ const Nav =()=>{
                   <NavLink className={'actionCall'} to="/connexion/login"> connexion </NavLink>
 
             
-              <div className='new-nav'>
+              <div onClick={handleClick} className='new-nav'>
                 <div className='menu'>
                   <span className='line-1'></span>
                   <span className='line-2'></span>
