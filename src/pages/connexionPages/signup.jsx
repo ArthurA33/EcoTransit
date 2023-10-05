@@ -1,145 +1,171 @@
-// import './../../style/signup.scss'
-import './../../style/login.scss'
-import { NavLink, Link } from "react-router-dom";
-import Head from './elements/head'
 import React, { useState } from "react";
-// import axios from "axios";
+import Head from "./elements/head";
+import { NavLink, Link } from "react-router-dom";
 
-const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-const Signup = ()=>{
-    const [formValue, setFormValue] = useState({
-        email: "",
-        pseudo: "",
-        password: "",
-        verif_password: "",
-        phone_number: "",
-    });
+const emailRegex =
+  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    const [emailError, setEmailError] = useState("");
-    const [passwordError, setPasswordError] = useState("");
+const Signup = () => {
+  const [formValue, setFormValue] = useState({
+    email: "",
+    pseudo: "",
+    password: "",
+    verif_password: "",
+    phone_number: "",
+  });
 
-    const handleInput = (e) => {
-        setFormValue({ ...formValue, [e.target.name]: e.target.value });
-    };
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState([]);
+  const [passwordErrorConfirm, setPasswordErrorConfirm] = useState("");
+  const [numberError, setNumberError] = useState("");
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+  const handleInput = (e) => {
+    setFormValue({ ...formValue, [e.target.name]: e.target.value });
+  };
 
-        setEmailError("");
-        setPasswordError("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        // Vérification des champs avec des regex
-        if (!emailRegex.test(formValue.email)) {
-            // L'adresse e-mail n'est pas valide
-            setEmailError("L'adresse e-mail n'est pas valide.");
-            return;
-        }
+    setEmailError("");
+    setPasswordError([]);
+    setPasswordErrorConfirm("");
+    setNumberError("");
 
-        if (formValue.password !== formValue.verif_password) {
-            // Les mots de passe ne sont pas identiques
-            setPasswordError("Les mots de passe ne correspondent pas.");
-            return;
-        }
+    // Vérification de l'e-mail avec une regex
+    if (!emailRegex.test(formValue.email)) {
+      setEmailError("L'adresse e-mail n'est pas valide.");
+    }
 
-        // Les champs sont valides, envoi de la requête POST
-        // const formData = {
-        //     email: formValue.email,
-        //     pseudo: formValue.pseudo,
-        //     password: formValue.password,
-        //     verif_password: formValue.verif_password,
-        //     phone_number: formValue.phone_number,
-        // };
+    // Vérification du mot de passe
+    const errors = [];
 
-        // const res = await axios.post(
-        //     "http://localhost/ecotransit/api/inscription.php",
-        //     formData
-        // );
+    if (!/[A-Z]/.test(formValue.password)) {
+      errors.push("une lettre majuscule");
+    }
 
-        // Effacement des champs du formulaire
-        setFormValue({
-            email: "",
-            pseudo: "",
-            password: "",
-            verif_password: "",
-            phone_number: "",
-    });
-    };
-        return (
-            <div className='log'>
-                <div className="formContainer">
-                <Head/>
-                    <form action="" onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="mail">
-                        E-MAIL <span className="required">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="email"
-                            value={formValue.email}
-                            onChange={handleInput}
-                        />
-                        {emailError && <p className="error">{emailError}</p>}
+    if (!/[a-z]/.test(formValue.password)) {
+      errors.push("une lettre minuscule");
+    }
 
-                    </div>
-                    <div>
-                        <label htmlFor="pseudo">
-                        PSEUDO <span className="required">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            name="pseudo"
-                            value={formValue.pseudo}
-                            onChange={handleInput}
-                        />
-                    </div>
-                    <div>
-                        
-                        <label htmlFor="password">
-                            MOT DE PASSE <span className="required">*</span>
-                        </label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={formValue.password}
-                            onChange={handleInput}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="conf_password">
-                            CONFIRMER LE MOT DE PASSE <span className="required">*</span>
-                        </label>
-                        <input
-                            type="password"
-                            name="verif_password"
-                            value={formValue.verif_password}
-                            onChange={handleInput}
-                        />
-                        {passwordError && <p className="error">{passwordError}</p>}
+    if (!/[0-9]/.test(formValue.password)) {
+      errors.push("un chiffre");
+    }
 
-                    </div>
-                    <div>
-                        <label htmlFor="phone">NUMERO DE TEL </label>
-                        <input
-                            type="text"
-                            name="phone_number"
-                            value={formValue.phone_number}
-                            onChange={handleInput}
-                            maxLength="10"
-                        />
-                    </div>
-                    <div>
-                    <input name="submit" type="submit"className='validate' value={'S\'INSCRIRE'}></input>
-                    </div>
-                    <div>
-                    <p> VOUS AVEZ UN COMPTE <NavLink to="/connexion/login">CONNEXION</NavLink></p>
-                    </div>  
+    if (!/[^a-zA-Z0-9]/.test(formValue.password)) {
+      errors.push("un caractère spécial");
+    }
 
-                    </form>
-                </div>
-            </div>  
-        
-    )
-}
-export default Signup 
+    if (errors.length > 0) {
+      setPasswordError(`le mot de passe doit contenir: ${errors}`);
+    }
+
+    // Vérification du mot de passe de confirmation
+    if (formValue.password !== formValue.verif_password) {
+      setPasswordErrorConfirm("Les mots de passe ne correspondent pas.");
+    }
+
+    // Vérification du numéro de téléphone (ajoutez vos propres règles ici)
+    if (formValue.phone_number.length !== 10) {
+      setNumberError("Le numéro de téléphone doit avoir 10 chiffres.");
+    }
+
+    // Si aucune erreur n'a été définie, le formulaire est valide
+    if (
+      !emailError &&
+      !passwordError.length &&
+      !passwordErrorConfirm &&
+      !numberError
+    ) {
+      // Envoyez le formulaire ou effectuez l'action souhaitée ici
+      console.log("Formulaire valide, prêt à être soumis.");
+    }
+  };
+
+  return (
+    <div className="log">
+      <div className="formContainer">
+        <Head />
+        <form action="" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="mail">
+              E-MAIL <span className="required">*</span>
+            </label>
+            <input
+              type="text"
+              name="email"
+              value={formValue.email}
+              onChange={handleInput}
+            />
+            {emailError && <p className="error">{emailError}</p>}
+          </div>
+          <div>
+            <label htmlFor="pseudo">
+              PSEUDO <span className="required">*</span>
+            </label>
+            <input
+              type="text"
+              name="pseudo"
+              value={formValue.pseudo}
+              onChange={handleInput}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">
+              MOT DE PASSE <span className="required">*</span>
+            </label>
+            <input
+              type="text"
+              name="password"
+              value={formValue.password}
+              onInput={handleInput}
+            />
+            {passwordError && <p className="error">{passwordError}</p>}
+          </div>
+          <div>
+            <label htmlFor="cof_password">
+              CONFIRMER LE MOT DE PASSE <span className="required">*</span>
+            </label>
+            <input
+              type="password"
+              name="verif_password"
+              value={formValue.verif_password}
+              onChange={handleInput}
+            />
+            {passwordErrorConfirm && <p className="error">{passwordErrorConfirm}</p>}
+          </div>
+          <div>
+            <label htmlFor="phone">NUMERO DE TEL</label>
+            <input
+              type="text"
+              name="phone_number"
+              value={formValue.phone_number}
+              onInput={handleInput}
+              maxLength="10"
+            />
+                        {numberError && <p className="error">{numberError}</p>}
+          </div>
+          <div>
+            <input
+              name="submit"
+              type="submit"
+              className="validate"
+              value={"S'INSCRIRE"}
+            ></input>
+          </div>
+          <div>
+            <p>
+              {" "}
+              VOUS AVEZ UN COMPTE{" "}
+              <NavLink to="/connexion/login">CONNEXION</NavLink>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Signup;
+
+

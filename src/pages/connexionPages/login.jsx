@@ -8,16 +8,29 @@ const Login = ()=>{
 
   const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-  
+    const [emailError, setEmailError] = useState("");
+
+    const emailRegex =
+  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+   
+  const [formValue, setFormValue] = useState({
+    email: "",
+    password: "",
+  });
     const handleSubmit  = () => {
       if(email.length === 0){
-        alert("Email has left blank!");
+        setEmailError("L'adresse email est manquante");
+         return;
+      }
+      if (!emailRegex.test(formValue.email)) {
+        setEmailError("L'adresse e-mail n'est pas valide.");
+        return;
       }
       else if(password.length === 0){
         alert("Password can't be blank!");
       }
       else{
-         alert('itsok')
+         alert('its ok')
       }
     }
      return (

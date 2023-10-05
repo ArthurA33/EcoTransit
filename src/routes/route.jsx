@@ -17,7 +17,6 @@ const AppRoutes = () => {
       <Route path="/connexion/signup" element={<Signup />} />
       <Route path="/connexion/login" element={<Login />} />
       {/* <Route path="*" element={<ErrorPage />} />   */}
-
     </Routes>
   )
 };
