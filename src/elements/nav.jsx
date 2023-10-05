@@ -8,7 +8,7 @@ const Nav =()=>{
       <header>
             <nav> 
             <NavLink className={'logo'} to="/">ECOTRANSIT</NavLink>
-                  <ul>
+                  <ul className='parent-link-nav'>
                     <li>
                     <NavLink to="/">ACCUEIL</NavLink>
                     </li>
