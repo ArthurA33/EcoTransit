@@ -21,7 +21,6 @@ const Home = ()=>{
             </div>
             <div>
                 <img className='image-right-home' src="src/assets/img-right-home.png" alt="image" />
-                <div className="circle"></div>
             </div>
         </section>
 

@@ -126,7 +126,14 @@ body {
     .parent-cards {
         grid-template-columns: repeat(1, 90%);
     }
-    
+    .image-right-home {
+        width: 400px;
+        height: 250px;
+    }
+    .circle {
+        top: 105%;
+        width: 100%;
+    }
     .landing {
         display: grid;
         .text-landing {
@@ -141,9 +148,6 @@ body {
                 padding-top: 20px;
             }
         }
-        .circle {
-            top: 95%;
-        }
     }
     .text-bottom-title {
         font-size: large;
@@ -154,7 +158,6 @@ body {
     .parent-cards {
         grid-template-columns: repeat(1, 90%);
     }
-    
     .landing {
         display: grid;
         .circle {
