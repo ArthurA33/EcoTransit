@@ -54,3 +54,93 @@ main {
     justify-content: center;
     text-transform: uppercase;
 }
+@media screen and ((min-width: 300px) and (max-width: 479px)) {
+    .parent-image-epsi {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+    .image-epsi {
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .parent-content {
+        display: grid;
+    }
+    .parent-profil {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        position: inherit;
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        .profil {
+            text-align: center;
+        }
+    }
+    .text {
+        margin: auto;
+        width: 50%;
+        position: inherit;
+        display: flex;
+    }
+}
+@media screen and ((min-width: 480px) and (max-width: 768px)) {
+    .parent-image-epsi {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+    .image-epsi {
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .parent-content {
+        display: grid;
+    }
+    .parent-profil {
+        width: 50%;
+        position: inherit;
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: repeat(1, 100%);
+        .profil {
+            text-align: center;
+        }
+    }
+    .text {
+        margin: auto;
+        width: 50%;
+        position: inherit;
+        display: flex;
+    }
+  }
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .parent-image-epsi {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+    .image-epsi {
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .parent-content {
+        display: grid;
+    }
+    .parent-profil {
+        width: 50%;
+        position: inherit;
+        display: grid;
+    }
+    .text {
+        margin: auto;
+        width: 50%;
+        position: inherit;
+        display: flex;
+    }
+  }
