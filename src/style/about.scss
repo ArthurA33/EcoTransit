@@ -1,13 +1,56 @@
-main{
-    .front, .back{
-       width: 50%;
-
-    }
-    .front{
-        background-color: #7D35D8;
-    }
-    .back{
-        background-color: #D3FFD3;
-    }
-    
+main {
+    font-family: 'lalezar';
+    padding: 10%;
+}
+.parent-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-epsi {
+    border-radius: 5px;
+    width: 450px;
+    height: 300px;
+    margin-right: 20%;
+}
+.parent-profil {
+    position: absolute;
+    left: 60%;
+    width: 20%;
+    margin-left: 3%;
+    display: grid;
+    grid-template-columns: repeat(2, 100%);
+    justify-items: center;
+    align-items: center;
+}
+.profil {
+    width: 100%;
+    text-align: start;
+    display: grid;
+    margin: 5px;
+}
+.name {
+    font-size: larger;
+    text-transform: capitalize;
+}
+.fonction {
+    font-size: medium;
+    text-transform: capitalize;
+}
+.text {
+    position: absolute;
+    left: 50%;
+    background-color: #191919;
+    width: 155px;
+    height: 150px;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 90%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
 }
