@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="icon" href="src/assets/logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class='menu-responsive' id="menu-responsive" style="display: none;">
+      <div class="close" onclick="menuResponsive()">X</div>
+      <nav>
+        <a href="/">ACCUEIL</a>
+        <div class="transition"></div>
+        <a href="/contact">CONTACT</a>
+        <div class="transition"></div>
+        <a href="/about">A PROPOS</a>
+        <div class="transition"></div>
+        <a class="button-responsive" href="connexion/login">connexion</a>
+      </nav>
+    </div>
+    <div id="root">
+      
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      function menuResponsive() {
+        const menu = document.getElementById('menu-responsive');
+        menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+      }
+    </script>
+  </body>
+</html>

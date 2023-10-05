@@ -1,0 +1,98 @@
+main{
+    background-color: rgba(211, 255, 211, 1);
+    padding: 5%;
+}
+section {
+    display: grid;
+    justify-items: center;
+}
+label {
+    display: grid;
+}
+h1 {
+    font-size: xxx-large;
+    margin: 10px 0 10px 0;
+}
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+input, textarea {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 60%;
+}
+.parent-content-form {
+    margin-top: 10px;
+}
+textarea {
+    max-width: 99%;
+    min-width: 97%;
+}
+.parent-form {
+    width: 50%;
+    box-shadow: 3px 3px 10px #191919;
+}
+form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: none;
+}
+.names {
+    display: flex;
+    justify-content: space-between;
+}
+.button-from {
+    &:hover {
+        background-color: rgb(51, 96, 144);
+    }
+    border: none;
+    background-color: rgb(61, 115, 173);
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*Responsive*/
+// Mobile portrait : De 320px à 480px de largeur.
+// Mobile paysage : De 481px à 767px de largeur.
+@media screen and ((min-width: 320px) and (max-width: 479px)) {
+    h1 {
+        font-size: larger;
+    }
+    .parent-form {
+        width: 100%;
+    }
+    input, textarea {
+        width: 80%;
+    }
+    .button-from {
+        width: 80%;
+    }
+}
+@media screen and ((min-width: 480px) and (max-width: 768px)) {
+    .parent-form {
+        width: 100%;
+    }
+    input, textarea {
+        width: 80%;
+    }
+  }
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .parent-form {
+        width: 100%;
+    }
+    input, textarea {
+        width: 80%;
+    }
+  }
+  

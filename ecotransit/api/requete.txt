@@ -1,0 +1,3 @@
+select U.Id_utilisateur, U.pseudo_personne, U.email_utilisateur, U.num_utilisateur, U.score_utilisateur, T.Id_trajet, T.nbr_km_trajet, T.date_trajet, T.CO2_utiliser_trajet from utilisateur as U, trajet as T 
+where U.Id_utilisateur = T.Id_utilisateur
+and U.email_utilisateur = "temp@gmail.com"
